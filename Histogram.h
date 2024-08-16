@@ -8,20 +8,22 @@
 #include <thread>
 using namespace std;
 
-class Histogram {
+class Histogram
+{
 private:
-	vector<int> hist;
-	int nbins;
-	double start, end;
+    vector<int> hist;
+    int nbins;
+    double start, end;
 
-	mutex mtx;
+    mutex mtx;
+
 public:
     Histogram(int, double, double);
-	~Histogram();
-	void update (double ); 		// updates the histogram
-    vector<int> get_hist();		// prints the histogram
-    int size ();
-	vector<double> get_range ();
+    ~Histogram();
+    void update(double);    // updates the histogram
+    vector<int> get_hist(); // prints the histogram
+    int size();
+    vector<double> get_range();
 };
 
-#endif 
+#endif
